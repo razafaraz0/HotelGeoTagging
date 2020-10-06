@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
     res.send('App Connected')
 })
 
-app.get('/hotels', (req, res) => {
+app.get('/properties', (req, res) => {
     const alt = req.query.alt;
     axios.get('https://discover.search.hereapi.com/v1/discover?at='+alt+'&q=hotels&apiKey=d6P_iT9IijO82t-OTwt_mUpiFyIodK3JJqV9msKJuqk')
         .then(response => {var array =response.data.items;

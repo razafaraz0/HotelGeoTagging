@@ -43,16 +43,16 @@ const autosuggest = (e) => {
             `https://autosuggest.search.hereapi.com/v1/autosuggest?apiKey=${window.apikey}&at=33.738045,73.084488&limit=5&resultType=city&q=${searchString}&lang=en-US`
         )
             .then((res) => res.json())
-            .then((json) => {
-                if (json.length != 0) {
+            .then((hotels) => {
+                if (hotels.length != 0) {
                     document.getElementById("list").innerHTML = ``;
-                    json.items.map((item) => {
+                    hotels.items.map((item) => {
                         if ((item.position != undefined) & (item.position != "")){
                             myItemLat = item.position.lat;
                             myItemLng = item.position.lng;
                             myItemtitle = item.title;
                         }
-                        document.getElementById("list").innerHTML += `<li onClick=" MarkOnMap(${item.position.lat},${item.position.lng},'${item.title}');alert(myItemtitle+myItemLat+myItemLng);">${item.title}</li>`;
+                        document.getElementById("list").innerHTML += `<li onClick=" MarkOnMap(${item.position.lat},${item.position.lng},'${item.title}');">${item.title}</li>`;
                     });
                 }
             });
@@ -71,7 +71,7 @@ function getHotels(Lat, Long) {
     }
     $.ajax({
         type: 'GET',
-        url: 'http://localhost:3000/hotels',
+        url: 'http://localhost:3000/properties',
         contentType: 'application/JSON; charset=uft-8',
         data: data,
         success: funcSuccess,
