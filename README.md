@@ -1,8 +1,9 @@
 # HotelGeoTagging
 WebPage that displays all the hotels near a specific location from a map
 
-#How T0 Run
-##Step 1:
+# How To Run
+
+## Step 1:
  Download all the files in the repository
  
 ## Step 2:
