@@ -12,5 +12,5 @@ WebPage that displays all the hotels near a specific location from a map
         node index.js
  This wll start the applcaiton on the http://localhost::3000
 
-##Step 3:
+## Step 3:
  Open/run the file home.html in the browser of your choice
